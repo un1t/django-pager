@@ -1,0 +1,25 @@
+{% if objects.paginator.num_pages > 1 %}
+    <style>
+        .django-pager{text-align: center;}
+        .django-pager>li{display: inline-block; *display:inline; *zoom:1;}
+    </style>
+    <ul class="django-pager">
+        {% if objects.has_previous %}
+            <li>
+                <a href="{{request.path}}?page={{ objects.previous_page_number }}" title="Дальше">←</a>
+            </li>
+        {% endif %}
+        
+        {% for n in objects.paginator.page_range %}
+            <li class="{% if objects.number == n %}active{% endif %}">
+                <a href="{{request.path}}?page={{n}}">{{n}}</a>
+            </li>
+        {% endfor %}
+        
+        {% if objects.has_next %}
+            <li>
+                <a href="{{request.path}}?page={{objects.next_page_number}}" title="Назад">→</a>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}
