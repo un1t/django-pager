@@ -10,10 +10,15 @@
             </li>
         {% endif %}
         
-        {% for n in objects.paginator.page_range %}
-            <li class="{% if objects.number == n %}active{% endif %}">
-                <a href="{{request.path}}?page={{n}}">{{n}}</a>
-            </li>
+        {% for range in objects.paginator.page_ranges %}
+            {% for n  in range %}
+                <li class="{% if objects.number == n %}active{% endif %}">
+                    <a href="{{request.path}}?page={{n}}">{{n}}</a>
+                </li>
+            {% endfor %}
+            {% if not forloop.last %}
+                <li>...</li>
+            {% endif %}
         {% endfor %}
         
         {% if objects.has_next %}
