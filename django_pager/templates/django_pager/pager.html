@@ -3,7 +3,7 @@
         .django-pager{text-align: center;}
         .django-pager>li{display: inline-block; *display:inline; *zoom:1;}
     </style>
-    <ul class="django-pager">
+    <ul class="{% if class %}{{ class }}{% else %}django-pager{% endif %}">
         {% if objects.has_previous %}
             <li>
                 <a href="{{request.path}}?page={{ objects.previous_page_number }}" title="Дальше">←</a>
