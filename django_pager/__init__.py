@@ -1,1 +1,1 @@
-from django_resized.forms import ResizedImageField
+from django_pager.pager import paginate
