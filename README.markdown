@@ -21,15 +21,15 @@ settings.py
 
 views.py
 
-from django_pager import paginate
+    from django_pager import paginate
 
-def listing(request):
-    qs = Contact.objects.all()
-    page = request.GET.get('page', 1)
-    contacts = paginate(qs, page, 10)
-    # You can also get page numbers reversed
-    # contacts = paginate(qs, page, 10, reverse=True)
-    return render_to_response('list.html', {"contacts": contacts})
+    def listing(request):
+        qs = Contact.objects.all()
+        page = request.GET.get('page', 1)
+        contacts = paginate(qs, page, 10)
+        # You can also get page numbers reversed
+        # contacts = paginate(qs, page, 10, reverse=True)
+        return render_to_response('list.html', {"contacts": contacts})
 
 
 list.html
