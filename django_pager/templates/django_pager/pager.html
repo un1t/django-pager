@@ -1,7 +1,7 @@
 {% if objects.paginator.num_pages > 1 %}
     <style>
         .django-pager{text-align: center;}
-        .django-pager>li{display: inline-block; *display:inline; *zoom:1; width: 20px; height: 20px; font-size: 14px;}
+        .django-pager>li{display: inline-block; *display:inline; *zoom:1; min-width: 15px; height: 20px; font-size: 14px; padding: 5px; margin: 5px;}
         .django-pager li.active{background-color: #A4A4A4; border-radius: 10px;}
         .django-pager li.active a{color: #fff;}
     </style>

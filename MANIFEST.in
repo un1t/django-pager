@@ -1,1 +1,2 @@
 include README.markdown
+recursive-include include django_pager/templates *
