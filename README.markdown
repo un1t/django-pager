@@ -1,6 +1,13 @@
 # django-pager
 
-Pagination.
+Pagination. If you have many pages, only 11 will be shown. 
+For example you have 100 pages. 
+
+**1** 2 3 4 5 6 7 8 ... 98 99 100
+
+1 2 3 ... 71 72 **73** 74 75 ... 98 99 100
+
+1 2 3 ... 93 94 95 96 97 98 **99** 100
 
 ## Installation
     
@@ -27,9 +34,7 @@ views.py
         qs = Contact.objects.all()
         page = request.GET.get('page', 1)
         contacts = paginate(qs, page, 10)
-        # You can also get page numbers reversed
-        # contacts = paginate(qs, page, 10, reverse=True)
-        return render_to_response('list.html', {"contacts": contacts})
+        return render('list.html', {"contacts": contacts})
 
 
 list.html
