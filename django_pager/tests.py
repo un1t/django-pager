@@ -4,6 +4,11 @@ from django_pager.pager import get_page_ranges
 
 class GetPageRangesTest(unittest2.TestCase):
 
+
+    def test_page1of11(self):
+        ranges = get_page_ranges(1, 11)
+        self.assertEquals(ranges, [[1,2,3,4,5,6,7,8,9,10,11]])
+
     def test_page1of200(self):
         ranges = get_page_ranges(1, 11)
         self.assertEquals(ranges, [[1,2,3,4,5,6,7,8,9,10,11]])

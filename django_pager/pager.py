@@ -23,7 +23,7 @@ def paginate(queryset, number, per_page, reverse=False):
 
 def get_page_ranges(number, num_pages):
     if num_pages <=11:
-        return [range(1, num_page+1)]
+        return [range(1, num_pages+1)]
     elif number <=6:
         return [range(1, 8+1), range(num_pages-2, num_pages+1)]
     elif number > num_pages-6:

@@ -42,6 +42,9 @@ list.html
     {% include 'django_pager/pager.html' with objects=contacts %}
 
 
+### Run tests
+
+    PYTHONPATH=. python django_pager/tests.py
 
 
 
